@@ -1,0 +1,32 @@
+@use '../abstact/variables' as vars;
+@use '../abstact/mixins';
+
+.footer {
+   margin: 100px 0;
+   &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   }
+   &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      p {
+         display: flex;
+         align-items: center;
+         gap: 6px;
+         svg {
+            width: 20px;
+            color: #fff;
+         }
+      }
+   }
+}
+
+.copyright {
+   text-align: center;
+   padding: 20px;
+   a:hover {
+      color: bisque;
+   }
+}
