@@ -1,0 +1,157 @@
+@use '../abstact/mixins';
+@use '../abstact/variables' as vars;
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+   box-sizing: border-box;
+   font-family: 'Rubik', sans-serif;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   background: vars.$main-bg;
+   color: vars.$white;
+   margin: 0;
+   padding: 0;
+}
+
+::-webkit-scrollbar {
+   width: 15px;
+}
+
+::-webkit-scrollbar-track {
+   box-shadow: inset 0 0 5px grey;
+   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+   background: grey;
+   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: rgba(128, 128, 128, 0.735);
+}
+
+h1,
+h2,
+h3,
+p {
+   margin: 0;
+}
+
+
+ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: vars.$white;
+}
+
+.container {
+   max-width: 1280px;
+   width: 100%;
+   margin: 0 auto;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+.btn {
+   display: inline-block;
+   background: linear-gradient(to right, #1345e6 0%, #D946EF 51%, #1345e6 100%);
+   border-radius: 5px;
+   background-size: 200% auto;
+   transition: all 0.3s ease-in-out;
+   padding: 12px 30px !important;
+   color: vars.$white;
+
+   &:hover {
+      background-position: right center;
+      color: vars.$white !important;
+   }
+}
+
+.center {
+   text-align: center;
+}
+
+.main {
+   &__title {
+      font-family: 'DM Sans';
+      font-weight: 700;
+      font-size: 35px;
+      line-height: 55px;
+   }
+
+   &__subtitle {
+      max-width: 600px;
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin: 10px auto;
+      font-family: 'DM Sans';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      text-align: center;
+   }
+}
+
+@include mixins.media-sm {
+   .main {
+      &__title {
+         font-size: 39px;
+      }
+   }
+}
+
+@include mixins.media-lg {
+   .main {
+      &__title {
+         font-size: 42px;
+      }
+   }
+}
+
+section {
+   padding-top: 90px;
+}
+
+.hidden {
+   display: none;
+}
+
+.left-0 {
+   left: 0 !important;
+}
+
+.rotate-180 {
+   transform: rotate(-180deg) !important;
+}
+
+.overflow-hidden {
+   overflow: hidden;
+}
+
+.close-btn {
+   position: absolute;
+   left: 25px;
+   top: 25px;
+   transform: scale(1.5);
+   display: block;
+}
+
+@include mixins.media-lg {
+   .close-btn {
+      display: none;
+   }
+}

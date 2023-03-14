@@ -1,0 +1,101 @@
+@use '../abstact/variables' as vars;
+@use '../abstact/mixins';
+
+.footer {
+   margin: 100px 0;
+
+   &__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+   }
+
+   &__list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+   }
+
+   &__item {
+
+      &:nth-child(1),
+      &:nth-child(2) {
+         border-bottom: 1px solid white;
+         padding-bottom: 30px;
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+         display: none;
+      }
+
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      a {
+         display: flex;
+         align-items: center;
+      }
+
+      p {
+         display: flex;
+         align-items: center;
+         gap: 6px;
+      }
+   }
+
+   &__link {
+      display: inline-block;
+
+      &-chevron {
+         transition: all 0.3s ease-in;
+      }
+
+      &:hover &-chevron {
+         transform: translateX(10px);
+      }
+   }
+}
+
+.copyright {
+   text-align: center;
+   padding: 20px;
+
+   a:hover {
+      color: bisque;
+   }
+}
+
+@include mixins.media-sm {
+   .footer {
+      &__list {
+         grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      &__item {
+
+         &:nth-child(1),
+         &:nth-child(2) {
+            border-bottom: none;
+            padding-bottom: 0;
+         }
+      }
+   }
+}
+
+@include mixins.media-lg {
+   .footer {
+      &__list {
+         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      }
+
+      &__item {
+
+         &:nth-child(3),
+         &:nth-child(4) {
+            display: flex;
+         }
+      }
+   }
+}
