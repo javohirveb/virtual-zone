@@ -127,7 +127,7 @@ section {
 }
 
 .overflow-hidden {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .close-btn {
@@ -393,6 +393,7 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
+  margin-top: 50px;
 }
 .services__item {
   padding: 24px;
